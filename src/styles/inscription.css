@@ -3,14 +3,18 @@
   font-size: 16px;
 }
 .title_inscription {
-  background-color: blue;
+  background-color: none
+  ;
   border-style: yellow;
+  text-align: justify;
 }
 
 @media screen and (max-width: 933px) {
   .title_inscription {
-    background-color: blue;
+    border-width: 2pm;
+    border-style: solid;
+    border-color: yellow;
     font-size: 14px;
-    display: none;
+    text-align: center;
   }
 }
