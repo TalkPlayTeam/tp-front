@@ -1,5 +1,5 @@
 import React from 'react';
-import './inscription.css';
+import '../styles/inscription.css'; 
 
 function App() {
   return (
