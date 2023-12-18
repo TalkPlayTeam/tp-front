@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/inscription.css'; 
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const InscriptionForm = ({ preloadedEmail }: { preloadedEmail: string | null }) =>  {
   const [email, setEmail] = useState(preloadedEmail || '');
@@ -18,9 +19,13 @@ const InscriptionForm = ({ preloadedEmail }: { preloadedEmail: string | null }) 
     i18n.changeLanguage(language);
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Code de gestion de la soumission du formulaire
+
+    navigate('/inscription-2'); // Naviguer vers GamesPage après la soumission
   };
 
   return (

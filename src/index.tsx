@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import InscriptionForm from './views/inscription_1';
@@ -11,11 +12,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <InscriptionForm preloadedEmail={null as string | null} />
+    <Router>
+      <Routes>
+        <Route path="/" element={<InscriptionForm preloadedEmail={null} />} />
+        <Route path="/inscription-2" element={<GamesPage />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
-  // <React.StrictMode>
-  //   <GamesPage />
-  // </React.StrictMode>
 );
 
 reportWebVitals();
