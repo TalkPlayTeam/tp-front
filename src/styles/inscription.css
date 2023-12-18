@@ -1,0 +1,16 @@
+.first_part_inscription {
+  background-color: white;
+  font-size: 16px;
+}
+.title_inscription {
+  background-color: blue;
+  border-style: yellow;
+}
+
+@media screen and (max-width: 933px) {
+  .title_inscription {
+    background-color: blue;
+    font-size: 14px;
+    display: none;
+  }
+}
