@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/inscription.css'; 
+import { useTranslation } from 'react-i18next';
 
 const InscriptionForm = ({ preloadedEmail }: { preloadedEmail: string | null }) =>  {
   const [email, setEmail] = useState(preloadedEmail || '');
@@ -7,20 +8,31 @@ const InscriptionForm = ({ preloadedEmail }: { preloadedEmail: string | null }) 
   const [password, setPassword] = useState('');
   const [language, setLanguage] = useState('');
   const [country, setCountry] = useState('');
+  const { t, i18n } = useTranslation(); // Utilisation de useTranslation ici
 
   useEffect(() => {
     // setEmail(fetchedEmailFromDB);
   }, []); 
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language);
   };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Code de gestion de la soumission du formulaire
+  };
+
   return (
     <div className="first_part_inscription">
       <title>Inscription - Talkplay</title>
       <header className="title_inscription">
-        <h1>Inscription</h1>
+        <h1>{t('Inscription')}</h1>
         <h3>Créez un compte TalkPlay</h3>
+        <div>
+          <button onClick={() => changeLanguage('en')}>English</button>
+          <button onClick={() => changeLanguage('fr')}>Français</button>
+        </div>
       </header>
       <form onSubmit={handleSubmit}>
       <div>

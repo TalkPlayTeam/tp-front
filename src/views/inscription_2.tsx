@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import lolLogo from '../assets/LoL_Logo.jpg';
 import cs2Image from '../assets/CS2.jpg';
 import '../styles/inscription.css'; 
+import { useTranslation } from 'react-i18next';
 
 type Game = {
         name: string;
