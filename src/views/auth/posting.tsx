@@ -10,6 +10,7 @@ const PostPage = () => {
     const [postText, setPostText] = useState("");
     const [image, setImage] = useState<string | null>(null);
     const [showGifs, setShowGifs] = useState(false); // Etat pour afficher la grille de GIFs
+    const [selectedGif, setSelectedGif] = useState<GiphyGif | null>(null);
     const giphyFetch = new GiphyFetch("jiQbIiuqdcgO1fpXi2YP6EGDkyyNcgO3");
     const [username, setUsername] = useState("PseudoJoueur");
     const [selectedGame, setSelectedGame] = useState("none");
@@ -21,6 +22,14 @@ const PostPage = () => {
         }
     };
 
+    type GiphyGif = {
+        images: {
+          downsized_medium: {
+            url: string;
+          };
+        };
+      };
+      
     const handlePost = () => {
         console.log("Post: ", postText);    
     };
@@ -32,6 +41,14 @@ const PostPage = () => {
     const handleCustomFileInputClick = () => {
         fileInputRef.current?.click(); // Utiliser la référence déjà déclarée au niveau supérieur
     };
+
+    const handleGifSelect = (gif: GiphyGif, e: React.SyntheticEvent<HTMLElement>) => {
+        e.preventDefault();
+        setSelectedGif(gif); // Met à jour l'état avec le GIF sélectionné
+        setShowGifs(false); // Ferme la grille de GIFs
+      };
+      
+      
     return (
         <div>
             <title>Talkplay</title>
@@ -59,6 +76,9 @@ const PostPage = () => {
                     </div>
                         <div className='post-body'>
                             <textarea value={postText} onChange={(e) => setPostText(e.target.value)} className="textareaStyle"/>
+                            {selectedGif && (
+                                <img src={selectedGif.images.downsized_medium.url} alt="Selected GIF" />
+                            )}
                         </div>
                         <div className='post-footer'>
                             <input
@@ -79,7 +99,16 @@ const PostPage = () => {
                     </div>
                 </>
             )}
-
+            {showGifs && (
+                <Grid
+                    fetchGifs={fetchGifs}
+                    width={430}
+                    columns={3}
+                    gutter={6}
+                    noLink={true}
+                    onGifClick={handleGifSelect} // Utilisez handleGifSelect ici
+                />
+            )}
             {showGifs && ( // Afficher la grille de GIFs
                 <Grid
                     fetchGifs={fetchGifs}

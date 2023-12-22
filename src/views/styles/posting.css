@@ -35,7 +35,6 @@
     height: 50px; 
     border-radius: 50%; /* Cela rend l'image ronde */
     object-fit: cover; /* Assurez-vous que l'image couvre bien la zone sans être déformée */
-    box-sizing: border-box ;
   }
   
   .username {
