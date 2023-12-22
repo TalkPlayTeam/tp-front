@@ -1,0 +1,79 @@
+.textareaStyle {
+    width: 80px;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    resize: vertical;
+  }
+  /* Masquer l'input mais le rendre fonctionnel */
+.hiddenFileInput {
+    display: none;
+  }
+.customFileUpload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    margin-right: 10px; /* Espace entre l'icône et le texte */
+}
+.imagePreview {
+    max-width: 100px; 
+    max-height: 100px;
+    border: 1px solid #ccc; 
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .avatar {
+    width: 50px; /* Ou la taille que vous souhaitez */
+    height: 50px; 
+    border-radius: 50%; /* Cela rend l'image ronde */
+    object-fit: cover; /* Assurez-vous que l'image couvre bien la zone sans être déformée */
+    box-sizing: border-box ;
+  }
+  
+  .username {
+    margin-left: 10px; /* Espace entre l'avatar et le pseudo */
+  }
+  
+  .game-select {
+    padding: 5px;
+    border-radius: 4px;
+    /* Autres styles selon vos préférences */
+  }
+  
+    
+  @media screen and (max-width: 933px) {
+    .post-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 16px;
+        box-sizing: border-box;
+    }
+    .post-body {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+    .textareaStyle {
+        width: 100%;
+        height: 150px;
+        font-size: 14px;
+        resize: vertical;
+        box-sizing: border-box;
+    }
+    .post-footer {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+  }
