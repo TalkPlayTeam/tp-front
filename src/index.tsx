@@ -8,6 +8,7 @@ import GamesPage from './views/public/inscription/inscription_2';
 import Inscription3 from './views/public/inscription/inscription_3';
 import './i18n';
 import LoginPage from './views/public/connexion/loginPage';
+import ForgotPasswordPage from './views/public/connexion/lostPassword';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +18,7 @@ root.render(
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
+        <Route path="/forgot-password" Component={ForgotPasswordPage} />
         {/* <Route path="/" element={<InscriptionForm preloadedEmail={null} />} /> */}
         <Route path="/inscription-2" element={<GamesPage />} />
       </Routes>
