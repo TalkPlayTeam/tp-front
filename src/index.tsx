@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import InscriptionForm from './views/inscription_1';
-import GamesPage from './views/inscription_2';
-import Inscription3 from './views/inscription_3';
+import InscriptionForm from './views/public/inscription_1';
+import GamesPage from './views/public/inscription_2';
+import Inscription3 from './views/public/inscription_3';
 import './i18n';
 
 const root = ReactDOM.createRoot(
