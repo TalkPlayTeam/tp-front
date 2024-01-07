@@ -1,0 +1,43 @@
+.post {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 15px;
+    max-width: 500px; /* ou une autre largeur selon votre design */
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .profile-pic {
+    width: 50px; /* ou la taille que vous souhaitez */
+    height: 50px; /* ou la taille que vous souhaitez */
+    border-radius: 50%; /* pour rendre l'image ronde */
+    margin-right: 10px;
+  }
+  
+  .post-header h5 {
+    margin: 0;
+    margin-right: 10px;
+    font-weight: normal;
+  }
+  
+  .post-content p {
+    margin-top: 0;
+  }
+  
+  .post-content img {
+    width: 100%; /* pour que les images prennent toute la largeur du post */
+    margin-top: 10px;
+    border-radius: 5px; /* si vous voulez que les images aient des coins arrondis */
+  }
+  
+  .post-footer {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #555;
+  }
+  

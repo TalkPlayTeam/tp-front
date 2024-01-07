@@ -2,6 +2,7 @@ import React from 'react';
 import Post from '../components/post'; 
 import AvatarTauren from '../assets/Tauren WoW.png';
 import WoWGamePic from '../assets/worldwarcraft_362191b.jpg';
+import '../styles/post.css'; 
 
 const postData = {
   text: "Aujourd'hui, j'ai battu mon record !",
@@ -10,7 +11,8 @@ const postData = {
   ],
   game: 'World of Warcraft',
   username: 'Clashix',
-  profilePic: AvatarTauren
+  profilePic: AvatarTauren,
+  date: '18h45 - 07/01/2024'
 };  
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
         game={postData.game}
         username={postData.username}
         profilePic={postData.profilePic}
+        date={postData.date}
       />
     </div>
   );

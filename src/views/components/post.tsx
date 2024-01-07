@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Post component
-const Post = ({ text, images, game, username, profilePic, ...props }: { text: string, images: string[], game: string, username: string, profilePic: string, [key: string]: any }) => {
+const Post = ({ text, images, game, username, profilePic, date, ...props }: { text: string, images: string[], game: string, username: string, profilePic: string, [key: string]: any }) => {
   return (
     <div className="post">
       <div className="post-header">
@@ -14,6 +14,9 @@ const Post = ({ text, images, game, username, profilePic, ...props }: { text: st
         {images.map((image, index) => (
           <img key={index} src={image} alt="Post content" />
         ))}
+      </div>
+      <div className="post-footer">
+        <span className="post-date">{date}</span>
       </div>
     </div>
   );
